@@ -1,16 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Books from '@/components/Books'
 import Book from '@/components/Book'
+import editBook from '@/components/editBook'
+
+
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Book',
-      component: Book
-    }
-  ]
+  routes: [{
+    path: '/',
+    name: 'Books',
+    component: Books
+  }, {
+    path: '/book',
+    name: 'Book',
+    component: Book
+  }, {
+    path: '/editBook',
+    name: 'editBook',
+    component: editBook
+  }]
 })
