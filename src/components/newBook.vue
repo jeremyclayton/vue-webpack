@@ -23,7 +23,7 @@
         <label for="cover_url">Cover URL</label>
         <input v-model="cover_url" type="text" class="form-control" id="cover_url" placeholder="Enter Cover Url">
       </div>
-      <button type="submit" class="btn btn-primary" v-on:click.prevent="edit()">Submit</button>
+      <button type="submit" class="btn btn-primary" v-on:click.prevent="addNew()">Submit</button>
     </form>
   </div>
 </div>
@@ -32,17 +32,14 @@
 <script>
 import AppNav from './AppNav';
 import axios from 'axios'
-import store from '../store.js'
-// console.log(store);
 
 export default {
-  name: 'editBook',
+  name: 'newBook',
   components: {
     AppNav,
   },
   data() {
     return {
-      book: store.selectedBook,
       editBook: [],
       title: '',
       genre: '',
@@ -50,15 +47,9 @@ export default {
       cover_url: ''
     }
   },
-  //  mounted() {
-  //   axios.get(`http://localhost:3000/books/${this.editBook.id}`).then(response => {
-  //     //   console.log(response.data);
-  //     this.editBook = response.data
-  //   })
-  // },
   methods: {
-    edit: function() {
-      axios.put(`http://localhost:3000/books/${this.book.id}`, {
+    addNew: function() {
+      axios.post(`http://localhost:3000/books`, {
         title: this.title,
         genre: this.genre,
         description: this.description,

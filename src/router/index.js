@@ -3,6 +3,10 @@ import Router from 'vue-router'
 import Books from '@/components/Books'
 import Book from '@/components/Book'
 import editBook from '@/components/editBook'
+import newBook from '@/components/newBook'
+import authors from '@/components/Authors'
+
+
 
 
 
@@ -22,5 +26,13 @@ export default new Router({
     path: '/editBook',
     name: 'editBook',
     component: editBook
+  }, {
+    path: '/newBook',
+    name: 'newBook',
+    component: newBook
+  }, {
+    path: '/authors',
+    name: 'authors',
+    component: authors
   }]
 })

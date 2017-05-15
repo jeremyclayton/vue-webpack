@@ -3,6 +3,12 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <h3 class="text-center">Header</h3>
+      <button type="button" class="btn btn-default">
+        <router-link to="/authors">Authors</router-link>
+      </button>
+      <button type="button" class="btn btn-default">
+        <router-link to="/">Books</router-link>
+      </button>
     </div>
   </nav>
 </div>
